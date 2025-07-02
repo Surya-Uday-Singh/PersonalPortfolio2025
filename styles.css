@@ -381,7 +381,7 @@ hr {
     right: -45px;
   }
 
-  #contact {
+.contact {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -394,13 +394,13 @@ hr {
     
     margin: 80px auto; /* center horizontally and add spacing from top */
   }
-#contact h1 {
+.contact h1 {
     margin-bottom: 20px;
     font-size: 40px;
     text-align: center;
     font-weight: bold;
 }
-#contact button {
+.contact button {
     padding: 12px;
     background-color: var(--primary-color);
     color: white;
@@ -415,20 +415,20 @@ hr {
 button:hover {
     background-color: #0036a1;
 }
-#contact form {
+.contact form {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
   
-  #contact label {
+.contact label {
     color: #fff;
     margin-bottom: 20px;
     font-weight: 500;
   }
   
-  #contact input,
-  #contact textarea {
+.contact input,
+.contact textarea {
     width: 100%;
     padding: 12px;
     margin-top: 10px;
@@ -442,12 +442,12 @@ button:hover {
     resize: vertical;
   }
   
-  #contact input::placeholder,
-  #contact textarea::placeholder {
+.contact input::placeholder,
+.contact textarea::placeholder {
     color: #aaa;
   }
   
-  #contact textarea {
+.contact textarea {
     min-height: 100px;
   }
 button {
@@ -462,4 +462,7 @@ button {
     transition: background-color 0.3s ease;
     margin: 0 auto; /* center the button */
     display: block;
+  }
+  html {
+    scroll-behavior: smooth;
   }
