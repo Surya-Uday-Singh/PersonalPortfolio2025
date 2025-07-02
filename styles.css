@@ -176,6 +176,12 @@ header p {
     font-size: 16px;
     opacity: 0.8;
 }
+hr {
+    border-color: #a2a2a2;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 .carousel-container {
     position: relative;
     width: 100%;
@@ -206,7 +212,9 @@ header p {
     overflow-wrap: break-word;
     word-break: break-word;
   }
-  
+  .card-content {
+    padding-top: 16px;
+  }
   
   .card:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -249,5 +257,122 @@ header p {
   
   .carousel-btn.right {
     right: 10px;
+  }
+  /* TIMELINE WRAPPER */
+.timeline {
+    width: 50%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .exp-card {
+    position: relative;
+    width: 80%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Padding adjustments */
+  .exp-card:nth-child(odd) {
+    padding: 30px 0 30px 30px;
+  }
+  .exp-card:nth-child(even) {
+    padding: 30px 30px 30px 0;
+  }
+  
+  /* Vertical line */
+  .exp-card::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid rgb(255, 253, 252);
+  }
+  
+  .exp-card:nth-child(odd)::before {
+    left: 0px;
+    top: -4.5px;
+    bottom: -4.5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .exp-card:nth-child(odd)::before {
+      top: -5px;
+      bottom: -5px;
+    }
+  }
+  
+  .exp-card:nth-child(even)::before {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+  
+  .exp-card:first-child::before {
+    border-top: 0;
+    border-top-left-radius: 0;
+  }
+  
+  .exp-card:last-child:nth-child(odd)::before {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .exp-card:last-child:nth-child(even)::before {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  /* Info box */
+  .exp-info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .exp-card:hover .exp-info {
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+  }
+  
+  .exp-info.active {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  /* Titles */
+  .exp-title {
+    color: rgb(255, 255, 255);
+    position: relative;
+  }
+  
+  
+  .exp-title::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 999px;
+    border: 3px solid rgb(0, 0, 0);
+  }
+  
+  .exp-card:nth-child(even) > .exp-info > .exp-title {
+    text-align: right;
+  }
+  
+  .exp-card:nth-child(odd) > .exp-info > .exp-title::before {
+    left: -45px;
+  }
+  
+  .exp-card:nth-child(even) > .exp-info > .exp-title::before {
+    right: -45px;
   }
   
