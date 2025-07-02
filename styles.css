@@ -186,7 +186,8 @@ hr {
     position: relative;
     width: 100%;
     max-width: calc(100vw - 250px); /* leave space for sidebar */
-    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
     overflow: hidden;
   }
   
@@ -236,33 +237,34 @@ hr {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--clr-primary, #004dc0);
+    background: var(--primary-color, #004dc0);
     color: white;
     border: none;
     border-radius: 50%;
     width: 35px;
     height: 35px;
     cursor: pointer;
-    opacity: 0.5;
-    z-index: 10;
-    font-size: 20px;
-    line-height: 1;
+    opacity: 0.4;
+    z-index: 10;  /* above cards */
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Make sure buttons do NOT cover too much space */
+  .carousel-btn.left {
+    left: 5px; /* reduce from 10px if overlapping too much */
+  }
+  
+  .carousel-btn.right {
+    right: 5px;
   }
   
   .carousel-btn:hover {
     opacity: 1;
   }
   
-  .carousel-btn.left {
-    left: 10px;
-  }
-  
-  .carousel-btn.right {
-    right: 10px;
-  }
   /* TIMELINE WRAPPER */
 .timeline {
     width: 50%;
@@ -387,7 +389,7 @@ hr {
     border-radius: 20px;
     width: 40%;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
+    padding: 50px;
     box-sizing: border-box;
     overflow-wrap: break-word;
     word-break: break-word;
